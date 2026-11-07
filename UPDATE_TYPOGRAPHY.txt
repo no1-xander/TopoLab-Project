@@ -1,0 +1,23 @@
+TopoLab v0.1.1 — Typography and math-rendering update
+
+How to apply:
+1. Close TopoLab if it is open.
+2. Extract this update archive directly into your existing "TopoLab Project" folder.
+3. Allow Windows to overwrite the updated source files when prompted.
+4. Do NOT delete or replace your .venv folder. It is not part of this update.
+5. Open the existing TopoLab Project folder in VS Code.
+6. Activate .venv in the terminal.
+7. Run:
+
+   python -m pip install -r requirements.txt
+   python main.py
+
+What changed:
+- Segoe UI is used for application/body text; Georgia is used for major headings.
+- Small interface labels and body text have been enlarged.
+- Mathematical expressions now use MathFormula.qml and the Python MathRenderer service.
+- Matplotlib MathText renders TeX-style formulas with the STIX math font set.
+- Matplotlib is added to requirements.txt.
+
+Note: MathText supports a broad TeX-like subset but is not a complete LaTeX distribution.
+The current Chapter 1 and Chapter 2 formula examples have been checked against the renderer.

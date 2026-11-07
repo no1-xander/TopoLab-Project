@@ -1,0 +1,17 @@
+[project]
+name = "topolab"
+version = "0.1.1"
+description = "An interactive laboratory for introductory topology"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.8,<7.0", "matplotlib>=3.10,<4.0"]
+
+[tool.pyside6-project]
+files = [
+    "main.py",
+    "topolab/app.py",
+    "topolab/services/math_renderer.py",
+    "qml/Main.qml",
+    "qml/theme/Palette.js",
+    "qml/components/MathFormula.qml",
+]
