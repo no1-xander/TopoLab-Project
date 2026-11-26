@@ -50,8 +50,8 @@ EXERCISES = [
             "The open sets are exactly [0,α), 0≤α≤1. Their complements are ∅ or [α,1), for 0≤α≤1 (with [1,1)=∅).",
             "Every nonempty open set in τ is itself a member of B, so the basis criterion is immediate: each point of an open set belongs to a basis member contained in it.",
             "For x∈[0,1), the open neighborhoods are [0,α) with x<α≤1; arbitrary neighborhoods are supersets in X of at least one such interval.",
-            "int(I)=[1/4,3/4) (relative to X, [0,α) intervals contained in I cannot include 1/4 as an interior point; hence the interior is empty). The closure is [0,3/4], and the boundary equals the closure minus the interior. See note: in this topology int(I)=∅.",
-            "Every point x∈I is not isolated in I because every neighborhood [0,α) of x contains points of I other than x. The accumulation points are [0,3/4] in X."
+            "int(I)=∅ because every nonempty open set [0,α) contains 0 and therefore cannot be contained in I. The closure is [1/4,1): these are exactly the points whose every open neighborhood meets I. Thus ∂I=[1/4,1).",
+            "No point of I is isolated: every neighborhood [0,α) of x∈I contains other points of I. The accumulation points are [1/4,1) in X."
         ],
         "quiz":{
             "question":"For x∈[0,1), which condition makes [0,α) an open neighborhood of x?",

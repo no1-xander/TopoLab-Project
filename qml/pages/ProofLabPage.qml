@@ -204,11 +204,22 @@ Item {
                                         wrapMode: Text.WordWrap
                                         width: parent.width
                                     }
+                                    Text {
+                                        text: "YOUR PROOF DRAFT · NOT AUTOMATICALLY VERIFIED"
+                                        color: Palette.cyan
+                                        font.pixelSize: 9
+                                        font.weight: Font.Bold
+                                    }
+                                    TextArea {
+                                        width: parent.width
+                                        height: 76
+                                        placeholderText: "Write your own proof or reasoning here…"
+                                        wrapMode: TextEdit.Wrap
+                                    }
                                 }
                             }
                         }
 
-                        { /* Quiz content is rendered only in quiz mode. */ }
                         Rectangle {
                             visible: root.mode === "quiz"
                             Layout.fillWidth: true
@@ -222,7 +233,7 @@ Item {
                                 anchors.margins: 13
                                 spacing: 9
                                 Text {
-                                    text: (exerciseController.quizQuestion().question || "")
+                                    text: ((exerciseController.currentExercise.quiz || {}).question || "")
                                     color: Palette.textPrimary
                                     font.pixelSize: 14
                                     font.weight: Font.DemiBold
@@ -230,7 +241,7 @@ Item {
                                     Layout.fillWidth: true
                                 }
                                 Repeater {
-                                    model: exerciseController.quizOptions()
+                                    model: (exerciseController.currentExercise.quiz || {}).options || []
                                     delegate: Button {
                                         Layout.fillWidth: true
                                         text: ["A. ", "B. ", "C. ", "D. "][index] + modelData
@@ -250,7 +261,7 @@ Item {
                                 Text {
                                     visible: root.quizRevealed
                                     text: exerciseController.feedback
-                                    color: Palette.success
+                                    color: exerciseController.feedback.startsWith("Correct.") ? Palette.success : Palette.danger
                                     font.pixelSize: 12
                                     wrapMode: Text.WordWrap
                                     Layout.fillWidth: true
