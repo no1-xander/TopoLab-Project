@@ -4,34 +4,39 @@ An interactive topology-learning laboratory built with Python, PySide6, and Qt Q
 
 ## Current development status
 
-**Version 0.3.0 — interactive finite Set Toolkit**
+**Version 0.4.0 — finite metric-space laboratory**
 
-The finite set-theory engine in topolab/core/sets.py is now connected to the Set Toolkit interface through topolab/services/set_controller.py.
+The Set Toolkit and finite topological-space explorer are connected to Python mathematical modules. Version 0.4.0 adds a finite metric engine and connects it to the Metric Laboratory.
 
-The interactive workspace currently supports:
-- Union, intersection, and difference of two finite sets.
-- Complement relative to an explicitly entered universe.
-- Power-set generation.
-- Cartesian products as ordered pairs.
-- Subset, equality, and disjointness checks.
+### Metric Laboratory capabilities
 
-### Mathematical and input scope
+- Checks the metric axioms M1 (separation), M2 (symmetry), and M3 (triangle inequality).
+- Requires an explicit distance for every ordered pair in the finite underlying set.
+- Calculates open and closed balls for a selected centre and positive radius.
+- Generates the metric topology of a finite metric space.
+- Constructs finite epsilon-nets, supporting later compactness work.
 
-The current interface accepts finite sets of simple labels (letters, digits, and underscores), entered as comma-separated values such as a, b, c. It does not parse intervals, infinite sets, or symbolic expressions. Complement checks that the selected set is contained in the stated universe. The power-set display is limited to 8 elements and the Cartesian-product display to 100 ordered pairs to keep the interface responsive.
+### Mathematical scope
 
-This is a focused integration milestone, not a claim that every Chapter 1 property or the full topology course is complete. The finite-map operations in the core are not yet exposed in the Set Toolkit interface.
+This release handles finite metric spaces with at most 10 labelled points in the interactive interface. Distances are entered as rows of the form \`x, y, d(x,y)\`; both ordered pairs must be supplied. The core uses numerical real distances and a small floating-point tolerance when checking triangle inequalities. It does not represent arbitrary infinite metric spaces or symbolic distance functions.
+
+A finite metric space is discrete: each singleton is open, so its metric topology is the power set. This is a mathematical consequence of finiteness, not a restriction imposed by the interface.
+
+### Existing finite-set workspace
+
+The Set Toolkit supports union, intersection, difference, complement relative to an explicit universe, power sets, Cartesian products, subset, equality, and disjointness for finite sets of simple labels.
 
 ## Run the application
 
-```bash
+\`\`\`bash
 python -m pip install -r requirements.txt
 python main.py
-```
+\`\`\`
 
 ## Run tests
 
-```bash
+\`\`\`bash
 python -m unittest discover -s tests -v
-```
+\`\`\`
 
-The tests cover the finite set engine and SetController input/calculation behavior. Run the command above in the project environment before treating the current revision as locally verified. QML rendering should also be checked by launching the app on Windows.
+Run the test suite in the project environment and launch the application on Windows to verify the Qt/QML runtime before treating a revision as locally verified.
