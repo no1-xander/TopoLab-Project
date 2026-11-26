@@ -1,1 +1,1 @@
-"""TopoLab static course data."""\n
+"""TopoLab static course data."""
