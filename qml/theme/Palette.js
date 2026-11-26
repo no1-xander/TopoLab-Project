@@ -24,8 +24,8 @@ var danger = "#E18B7B"
 
 // Windows includes Segoe UI and Georgia. These are used for interface text;
 // equations are rendered separately with Matplotlib's bundled STIX math fonts.
-var uiFont = "Segoe UI"
-var displayFont = "Georgia"
+var uiFont = "Plus Jakarta Sans"
+var displayFont = "Newsreader"
 
 // Shared type scale in QML pixels.
 var labelSize = 10

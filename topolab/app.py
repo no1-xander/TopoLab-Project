@@ -1,3 +1,4 @@
+
 """Create and run the TopoLab Qt Quick application."""
 
 from __future__ import annotations
@@ -6,13 +7,38 @@ import sys
 from pathlib import Path
 
 from PySide6.QtCore import QUrl
-from PySide6.QtGui import QFont, QGuiApplication
+from PySide6.QtGui import QFont, QFontDatabase, QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
 from topolab.services.math_renderer import MathRenderer
+from topolab.services.topology_controller import TopologyController
+from topolab.services.basis_controller import BasisController
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 QML_ENTRY_POINT = PROJECT_ROOT / "qml" / "Main.qml"
+FONT_DIRECTORY = PROJECT_ROOT / "assets" / "fonts"
+
+
+def load_application_fonts() -> None:
+    """Register the fonts bundled with TopoLab."""
+    font_files = [
+        "Newsreader_14pt-Regular.ttf",
+        "Newsreader_14pt-Bold.ttf",
+        "PlusJakartaSans-Regular.ttf",
+        "PlusJakartaSans-Bold.ttf",
+    ]
+
+    for filename in font_files:
+        font_path = FONT_DIRECTORY / filename
+
+        if not font_path.is_file():
+            print(f"WARNING: Font file not found: {font_path}")
+            continue
+
+        font_id = QFontDatabase.addApplicationFont(str(font_path))
+
+        if font_id == -1:
+            print(f"WARNING: Could not load font: {filename}")
 
 
 def main() -> int:
@@ -26,15 +52,24 @@ def main() -> int:
     app.setOrganizationName("TopoLab")
     app.setApplicationVersion("0.1.1")
 
-    # Segoe UI is a clear, modern Windows UI font. Mathematical expressions
-    # use a separate STIX serif renderer through MathFormula.qml.
-    ui_font = QFont("Segoe UI")
+    load_application_fonts()
+
+    ui_font = QFont("Plus Jakarta Sans")
     ui_font.setPointSize(10)
     app.setFont(ui_font)
 
     engine = QQmlApplicationEngine()
     math_renderer = MathRenderer()
+    topology_controller = TopologyController()
+    basis_controller = BasisController()
+
     engine.rootContext().setContextProperty("mathRenderer", math_renderer)
+    engine.rootContext().setContextProperty(
+        "topologyController", topology_controller
+)
+    engine.rootContext().setContextProperty(
+        "basisController", basis_controller
+)
     engine.load(QUrl.fromLocalFile(str(QML_ENTRY_POINT)))
 
     if not engine.rootObjects():

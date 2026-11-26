@@ -16,20 +16,29 @@ ApplicationWindow {
     color: Palette.canvas
 
     property int activePage: 0
-    property var pageTitles: ["Overview", "Space explorer", "Set toolkit", "Proof laboratory", "Metric laboratory"]
+    property var pageTitles: [
+        "Overview",
+        "Space explorer",
+        "Set toolkit",
+        "Proof laboratory",
+        "Metric laboratory",
+        "Basis laboratory"
+    ]
     property var pageSubtitles: [
         "A workspace for mathematical exploration",
         "Define X and inspect a proposed topology",
         "Build the set operations used throughout topology",
         "Follow definitions, theorems, and proof structures",
-        "Explore distances, balls, and metric topologies"
+        "Explore distances, balls, and metric topologies",
+        "Validate bases, explore subbases, and generate topologies"
     ]
     property var pageFiles: [
         "pages/OverviewPage.qml",
         "pages/SpaceExplorerPage.qml",
         "pages/SetToolkitPage.qml",
         "pages/ProofLabPage.qml",
-        "pages/MetricLabPage.qml"
+        "pages/MetricLabPage.qml",
+        "pages/BasisLabPage.qml"
     ]
 
     Rectangle {
@@ -105,6 +114,7 @@ ApplicationWindow {
                     }
 
                     NavItem { Layout.fillWidth: true; label: "Space explorer"; glyph: "◎"; active: window.activePage === 1; onActivated: window.activePage = 1 }
+                    NavItem { Layout.fillWidth: true; label: "Basis laboratory"; glyph: "⊆"; active: window.activePage === 5; onActivated: window.activePage = 5 }
                     NavItem { Layout.fillWidth: true; label: "Set toolkit"; glyph: "∪"; active: window.activePage === 2; onActivated: window.activePage = 2 }
                     NavItem { Layout.fillWidth: true; label: "Proof laboratory"; glyph: "∴"; active: window.activePage === 3; onActivated: window.activePage = 3 }
                     NavItem { Layout.fillWidth: true; label: "Metric laboratory"; glyph: "⊙"; active: window.activePage === 4; onActivated: window.activePage = 4 }

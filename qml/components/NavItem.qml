@@ -7,7 +7,6 @@ Item {
     property string label: "Navigation item"
     property string glyph: "•"
     property bool active: false
-    property bool enabled: true
     signal activated()
 
     implicitWidth: 224
