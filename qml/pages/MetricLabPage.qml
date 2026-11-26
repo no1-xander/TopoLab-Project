@@ -184,8 +184,6 @@ Item {
                         font.pixelSize: 12
                         wrapMode: Text.WordWrap
                     }
-                    { // A small verification summary is only shown for valid metrics.
-                    }
                     Text {
                         Layout.fillWidth: true
                         visible: root.metricResult.ok === true
