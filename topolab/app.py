@@ -2,7 +2,7 @@
 from __future__ import annotations
 import sys
 from pathlib import Path
-from PySide6.QtCore import QUrl
+from PySide6.QtCore import QUrl, QStandardPaths
 from PySide6.QtGui import QFont, QFontDatabase, QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 from topolab.services.math_renderer import MathRenderer
@@ -54,7 +54,8 @@ def main() -> int:
     basis_controller = BasisController()
     set_controller = SetController()
     metric_controller = MetricController()
-    exercise_controller = ExerciseController()
+    progress_directory = Path(QStandardPaths.writableLocation(QStandardPaths.AppDataLocation))
+    exercise_controller = ExerciseController(progress_directory / "progress.json")
     engine.rootContext().setContextProperty("mathRenderer", math_renderer)
     engine.rootContext().setContextProperty(
         "topologyController", topology_controller

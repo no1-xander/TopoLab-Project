@@ -1,5 +1,21 @@
 # TopoLab — Version History
 
+## v0.6.0 — Per-part quizzes, saved drafts, and finite examples
+
+### Added
+- 40 distinct multiple-choice questions, one for every subquestion in Sheets N1 and N2.
+- Per-subquestion explanatory feedback and persisted attempt/correct counters.
+- Atomic local JSON persistence for proof drafts, restored per exercise part.
+- User-entered finite topology validation and calculations: open/closed sets, interior, closure, boundary, accumulation points, isolated points, and Hausdorff status (up to 10 points).
+- Tests for quiz coverage, persistence, and finite example calculations.
+
+### Scope
+- The finite example checker does not decide arbitrary infinite-space claims.
+- Free-form proof drafts are saved but are not formally proof-checked.
+- N1 Exercise 3, part 2, has two sets that are not neighborhoods of 2: [2,4) and (2,4); the quiz tests the complete classification.
+
+
+
 ## v0.5.0 — Course exercise and quiz laboratory
 
 ### Added

@@ -4,7 +4,7 @@ An interactive topology-learning laboratory built with Python, PySide6, and Qt Q
 
 ## Current development status
 
-**Version 0.5.0 — course exercise and quiz laboratory**
+**Version 0.6.0 — per-subquestion quizzes, saved drafts, and finite examples**
 
 The Proof Laboratory is now an Exercise & Quiz Laboratory containing all 14 exercises from the supplied Sheets N1 and N2, with part-by-part study explanations and an objectively keyed multiple-choice check for each exercise.
 
@@ -15,10 +15,12 @@ The Set Toolkit, finite topological-space explorer, and finite metric engine are
 - Browse all 10 exercises from Sheet N1 and all 4 exercises from Sheet N2.
 - Read each original exercise statement and every listed sub-question.
 - Study concise solution explanations for each part.
-- Switch to quiz mode, select an answer, and receive immediate correctness feedback and an explanation.
+- Switch to quiz mode and answer a separate multiple-choice question for each of the 40 supplied subquestions.
+- Receive immediate correction and a specific explanation, including the right option after a mistake.
+- Track per-subquestion attempts and correct answers across sessions.
 - The exercise bank is local and works without an AI service or internet connection. The supplied sheets contain 14 numbered exercises and 40 listed subparts.
 
-**Proof-checking limitation:** written proof text is not yet formally verified. The explanations are study solutions, while quiz questions are checked against explicit answer keys. The application does not label a student's free-form proof mathematically correct. Draft text is an in-session workspace, not yet saved across application restarts. Exercise-specific example validation is a later integration step; use the existing Set Toolkit, Space Explorer, and Metric Laboratory for supported finite calculations.
+**Proof-checking limitation:** written proof text is not yet formally verified. The explanations are study solutions, while quiz questions are checked against explicit answer keys. The application does not label a student's free-form proof mathematically correct. Proof drafts are saved locally per exercise part and restored across restarts. The finite-example checker accepts a user-entered universe, topology, and subset; validates the topology axioms; and calculates open/closed sets, interior, closure, boundary, accumulation/isolated points, and Hausdorff status. It is exact for finite spaces of at most 10 points. It does not verify infinite-space claims or free-form proofs.
 
 ### Metric Laboratory capabilities
 
