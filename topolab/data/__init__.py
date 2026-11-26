@@ -1,0 +1,1 @@
+"""TopoLab static course data."""\n

@@ -1,6 +1,6 @@
 [project]
 name = "topolab"
-version = "0.4.0"
+version = "0.5.0"
 description = "An interactive laboratory for introductory topology"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,6 +13,8 @@ files = [
     "topolab/services/math_renderer.py",
     "topolab/services/set_controller.py",
     "topolab/services/metric_controller.py",
+    "topolab/services/exercise_controller.py",
+    "topolab/data/exercise_bank.py",
     "qml/Main.qml",
     "qml/theme/Palette.js",
     "qml/components/MathFormula.qml",

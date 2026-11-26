@@ -1,5 +1,20 @@
 # TopoLab — Version History
 
+## v0.5.0 — Course exercise and quiz laboratory
+
+### Added
+- A source-grounded exercise bank containing all 10 exercises from Sheet N1 and all 4 exercises from Sheet N2, including their subparts.
+- Part-by-part study explanations for all supplied exercise parts.
+- Quiz mode with one multiple-choice check per exercise, answer checking, and explanatory feedback.
+- ExerciseController and tests for source-bank completeness and quiz structure.
+
+### Scope and verification
+- The currently attached exercise sheets are N1 and N2; no separate Sheet N3 was present in the supplied files.
+- This release does not formally verify free-form proof text. Quiz answers are checked against explicit keys.
+- The source for compactness exercises is Sheet N2, supported by the supplied Chapter 3 notes.
+
+
+
 ## v0.4.0 — Finite metric-space laboratory
 
 **Status:** Implementation committed; run the test suite and verify the Qt/QML runtime on Windows.

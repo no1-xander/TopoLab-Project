@@ -10,6 +10,7 @@ from topolab.services.topology_controller import TopologyController
 from topolab.services.basis_controller import BasisController
 from topolab.services.set_controller import SetController
 from topolab.services.metric_controller import MetricController
+from topolab.services.exercise_controller import ExerciseController
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 QML_ENTRY_POINT = PROJECT_ROOT / "qml" / "Main.qml"
@@ -42,7 +43,7 @@ def main() -> int:
     app = QGuiApplication(sys.argv)
     app.setApplicationName("TopoLab")
     app.setOrganizationName("TopoLab")
-    app.setApplicationVersion("0.4.0")
+    app.setApplicationVersion("0.5.0")
     load_application_fonts()
     ui_font = QFont("Plus Jakarta Sans")
     ui_font.setPointSize(10)
@@ -53,6 +54,7 @@ def main() -> int:
     basis_controller = BasisController()
     set_controller = SetController()
     metric_controller = MetricController()
+    exercise_controller = ExerciseController()
     engine.rootContext().setContextProperty("mathRenderer", math_renderer)
     engine.rootContext().setContextProperty(
         "topologyController", topology_controller
@@ -65,6 +67,9 @@ def main() -> int:
     )
     engine.rootContext().setContextProperty(
         "metricController", metric_controller
+    )
+    engine.rootContext().setContextProperty(
+        "exerciseController", exercise_controller
     )
     engine.load(QUrl.fromLocalFile(str(QML_ENTRY_POINT)))
     if not engine.rootObjects():
