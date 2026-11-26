@@ -1,4 +1,3 @@
-
 """Create and run the TopoLab Qt Quick application."""
 
 from __future__ import annotations
@@ -50,7 +49,7 @@ def main() -> int:
     app = QGuiApplication(sys.argv)
     app.setApplicationName("TopoLab")
     app.setOrganizationName("TopoLab")
-    app.setApplicationVersion("0.1.1")
+    app.setApplicationVersion("0.2.0")
 
     load_application_fonts()
 
@@ -66,10 +65,10 @@ def main() -> int:
     engine.rootContext().setContextProperty("mathRenderer", math_renderer)
     engine.rootContext().setContextProperty(
         "topologyController", topology_controller
-)
+    )
     engine.rootContext().setContextProperty(
         "basisController", basis_controller
-)
+    )
     engine.load(QUrl.fromLocalFile(str(QML_ENTRY_POINT)))
 
     if not engine.rootObjects():

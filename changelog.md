@@ -1,6 +1,23 @@
 # TopoLab — Version History
 
-This file records the project releases delivered so far. Keep it in the root of the `TopoLab Project` folder and append a new section whenever a new version is delivered.
+This file records the project releases delivered so far. Append a new section whenever a new version is delivered.
+
+## v0.2.0 — Finite set-theory core
+
+**Status:** Mathematical core committed; QML integration remains in progress.
+
+### Added
+- A reusable finite-set engine in `topolab/core/sets.py`.
+- Subset and equality checks, power sets, union, intersection, difference, complements relative to an explicit universe, disjointness, indexed-family unions and intersections, Cartesian products, and finite cardinality.
+- Finite-map image and preimage operations, injective/surjective/bijective checks, composition, and inverse functions for bijections.
+- A dedicated test module covering the implemented operations and several image/preimage identities from Chapter 1.
+
+### Mathematical scope
+- The engine uses finite Python collections of hashable objects and immutable set results.
+- Complements always require an explicit ambient universe.
+- Preimages are supported for arbitrary finite maps; inverse functions are restricted to bijections.
+- Infinite number systems and symbolic interval or piecewise-function calculations are not implemented by this finite engine.
+- The Set Toolkit QML page has not yet been connected to these operations.
 
 ## v0.1.1 — Typography and mathematical notation
 
@@ -18,7 +35,6 @@ This file records the project releases delivered so far. Keep it in the root of 
 
 ### Notes
 - MathText supports a TeX-like subset; it is not a complete LaTeX installation.
-- The current interface remains a visual scaffold. Mathematical calculations are not yet implemented.
 - The v0.1.1 archive is an update patch intended to be extracted over the v0.1.0 starter project. Preserve `.venv` when applying updates.
 
 ## v0.1.0 — Initial interface foundation
@@ -41,8 +57,8 @@ This file records the project releases delivered so far. Keep it in the root of 
 
 ## Versioning convention for future deliveries
 
-- **PATCH** (`0.1.1` → `0.1.2`): fixes, typography adjustments, small UI improvements or corrections that do not add a major capability.
-- **MINOR** (`0.1.1` → `0.2.0`): a new module or substantial capability, such as the first working set-theory engine.
-- **MAJOR** (`0.x` → `1.0.0`): a stable, integrated release suitable for the final university demonstration.
+- **PATCH** (for example, 0.2.0 → 0.2.1): fixes or small improvements that do not add a substantial capability.
+- **MINOR** (for example, 0.2.0 → 0.3.0): a new mathematical module or substantial integrated capability.
+- **MAJOR** (0.x → 1.0.0): a stable, integrated release suitable for the final university demonstration.
 
-For each future delivery, update the version in `pyproject.toml` and `README.md`, append to this changelog, and clearly label the archive as either a complete project or a patch/update.
+For each future delivery, update the version in `pyproject.toml`, `topolab/app.py`, and `README.md`, then append to this changelog. Clearly label an archive as either a complete project or a patch/update.
