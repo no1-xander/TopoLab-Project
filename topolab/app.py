@@ -43,7 +43,7 @@ def main() -> int:
     app = QGuiApplication(sys.argv)
     app.setApplicationName("TopoLab")
     app.setOrganizationName("TopoLab")
-    app.setApplicationVersion("0.5.0")
+    app.setApplicationVersion("0.6.0")
     load_application_fonts()
     ui_font = QFont("Plus Jakarta Sans")
     ui_font.setPointSize(10)

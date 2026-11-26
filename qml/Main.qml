@@ -149,7 +149,7 @@ ApplicationWindow {
                         }
                     }
                     Text {
-                        text: "TOPOLAB  ·  VERSION 0.5.0"
+                        text: "TOPOLAB  ·  VERSION 0.6.0"
                         color: "#80685C"
                         font.pixelSize: 10
                         font.letterSpacing: 0.8
