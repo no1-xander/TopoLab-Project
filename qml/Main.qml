@@ -20,7 +20,7 @@ ApplicationWindow {
         "Overview",
         "Space explorer",
         "Set toolkit",
-        "Proof laboratory",
+        "Exercise & quiz",
         "Metric laboratory",
         "Basis laboratory"
     ]
@@ -28,7 +28,7 @@ ApplicationWindow {
         "A workspace for mathematical exploration",
         "Define X and inspect a proposed topology",
         "Build the set operations used throughout topology",
-        "Follow definitions, theorems, and proof structures",
+        "Study course exercises and test your understanding",
         "Explore distances, balls, and metric topologies",
         "Validate bases, explore subbases, and generate topologies"
     ]
@@ -116,7 +116,7 @@ ApplicationWindow {
                     NavItem { Layout.fillWidth: true; label: "Space explorer"; glyph: "◎"; active: window.activePage === 1; onActivated: window.activePage = 1 }
                     NavItem { Layout.fillWidth: true; label: "Basis laboratory"; glyph: "⊆"; active: window.activePage === 5; onActivated: window.activePage = 5 }
                     NavItem { Layout.fillWidth: true; label: "Set toolkit"; glyph: "∪"; active: window.activePage === 2; onActivated: window.activePage = 2 }
-                    NavItem { Layout.fillWidth: true; label: "Proof laboratory"; glyph: "∴"; active: window.activePage === 3; onActivated: window.activePage = 3 }
+                    NavItem { Layout.fillWidth: true; label: "Exercise & quiz"; glyph: "∴"; active: window.activePage === 3; onActivated: window.activePage = 3 }
                     NavItem { Layout.fillWidth: true; label: "Metric laboratory"; glyph: "⊙"; active: window.activePage === 4; onActivated: window.activePage = 4 }
 
                     Item { Layout.fillHeight: true }
@@ -149,7 +149,7 @@ ApplicationWindow {
                         }
                     }
                     Text {
-                        text: "TOPOLAB  ·  VERSION 0.3.0"
+                        text: "TOPOLAB  ·  VERSION 0.5.0"
                         color: "#80685C"
                         font.pixelSize: 10
                         font.letterSpacing: 0.8
@@ -250,7 +250,7 @@ ApplicationWindow {
                         Text { text: "·"; color: Palette.textSecondary; font.pixelSize: 11 }
                         Text { text: "Local session"; color: Palette.textSecondary; font.pixelSize: 10 }
                         Item { Layout.fillWidth: true }
-                        Text { text: "CHAPTERS 01–02  /  FOUNDATION BUILD"; color: "#8F7567"; font.pixelSize: 10; font.letterSpacing: 0.7 }
+                        Text { text: "EXERCISE SHEETS N1–N2  /  COURSE PRACTICE"; color: "#8F7567"; font.pixelSize: 10; font.letterSpacing: 0.7 }
                     }
                 }
             }

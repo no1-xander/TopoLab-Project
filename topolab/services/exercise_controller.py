@@ -1,7 +1,6 @@
 """Qt-facing exercise and quiz controller."""
 from __future__ import annotations
 
-import random
 from PySide6.QtCore import QObject, Property, Signal, Slot
 from topolab.data.exercise_bank import get_exercises
 

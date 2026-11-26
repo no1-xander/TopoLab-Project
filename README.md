@@ -8,7 +8,7 @@ An interactive topology-learning laboratory built with Python, PySide6, and Qt Q
 
 The Proof Laboratory is now an Exercise & Quiz Laboratory containing all 14 exercises from the supplied Sheets N1 and N2, with part-by-part study explanations and an objectively keyed multiple-choice check for each exercise.
 
-The Set Toolkit and finite topological-space explorer are connected to Python mathematical modules. Version 0.4.0 adds a finite metric engine and connects it to the Metric Laboratory.
+The Set Toolkit, finite topological-space explorer, and finite metric engine are connected to Python mathematical modules. Version 0.5.0 adds a course-grounded exercise and quiz workspace.
 
 ### Exercise & Quiz Laboratory
 
@@ -16,9 +16,9 @@ The Set Toolkit and finite topological-space explorer are connected to Python ma
 - Read each original exercise statement and every listed sub-question.
 - Study concise solution explanations for each part.
 - Switch to quiz mode, select an answer, and receive immediate correctness feedback and an explanation.
-- The exercise bank is local and works without an AI service or internet connection.
+- The exercise bank is local and works without an AI service or internet connection. The supplied sheets contain 14 numbered exercises and 40 listed subparts.
 
-**Proof-checking limitation:** written proof text is not yet formally verified. The explanations are study solutions, while quiz questions are checked against explicit answer keys. The application does not label a student's free-form proof mathematically correct.
+**Proof-checking limitation:** written proof text is not yet formally verified. The explanations are study solutions, while quiz questions are checked against explicit answer keys. The application does not label a student's free-form proof mathematically correct. Draft text is an in-session workspace, not yet saved across application restarts. Exercise-specific example validation is a later integration step; use the existing Set Toolkit, Space Explorer, and Metric Laboratory for supported finite calculations.
 
 ### Metric Laboratory capabilities
 

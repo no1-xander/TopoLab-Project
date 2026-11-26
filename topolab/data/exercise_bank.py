@@ -138,8 +138,8 @@ EXERCISES = [
         "topic":"Continuous maps and homeomorphisms",
         "statement":"Let X={0,1} be discrete, Y={a,b} with σ={∅,{a},Y}, and f(0)=a, f(1)=b.",
         "parts":["Find inverse images of open sets in Y and prove continuity.","Determine whether f is a homeomorphism."],
-        "solutions":["f⁻¹(∅)=∅, f⁻¹({a})={0}, and f⁻¹(Y)=X. All are open in X, so f is continuous.","f is bijective, but its inverse is not continuous: f({1})={b} is not open in Y, equivalently f⁻¹ as a map has inverse-image of {a} equal to {0}? More directly, the inverse map g:Y→X has g⁻¹({0})={a}, which is open, and g⁻¹({1})={b}, which is not open. Thus not a homeomorphism."]
-        ,"quiz":{"question":"Is f a homeomorphism?","options":["Yes, every continuous bijection is a homeomorphism","No, the inverse map is not continuous","No, f is not injective","No, f is not continuous"],"answer":1,"explanation":"The inverse sends the open singleton {0} in X to the preimage {a}? For g=f⁻¹, g⁻¹({1})={b}, which is not open in Y, so g is not continuous."}
+        "solutions":["f⁻¹(∅)=∅, f⁻¹({a})={0}, and f⁻¹(Y)=X. All are open in X, so f is continuous.","The inverse map g:Y→X is not continuous: the open singleton {1}⊆X has preimage g⁻¹({1})={b}⊆Y, which is not open in Y. Thus f is not a homeomorphism."]
+        ,"quiz":{"question":"Is f a homeomorphism?","options":["Yes, every continuous bijection is a homeomorphism","No, the inverse map is not continuous","No, f is not injective","No, f is not continuous"],"answer":1,"explanation":"For g=f⁻¹:Y→X, the open set {1}⊆X has preimage g⁻¹({1})={b}, which is not open in Y. Hence g is not continuous."}
     },
     {
         "id":"n1-e10","sheet":"N1","number":10,"title":"The discrete metric on N",
