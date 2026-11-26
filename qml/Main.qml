@@ -144,12 +144,12 @@ ApplicationWindow {
                                 Item { Layout.fillWidth: true }
                                 Rectangle { width: 6; height: 6; radius: 3; color: Palette.warning }
                             }
-                            Text { text: "Interface foundation"; color: Palette.textPrimary; font.pixelSize: 12; font.weight: Font.DemiBold }
-                            Text { text: "Mathematical engine: next"; color: Palette.textSecondary; font.pixelSize: 11 }
+                            Text { text: "Set theory workspace"; color: Palette.textPrimary; font.pixelSize: 12; font.weight: Font.DemiBold }
+                            Text { text: "Finite set engine: connected"; color: Palette.textSecondary; font.pixelSize: 11 }
                         }
                     }
                     Text {
-                        text: "TOPOLAB  ·  VERSION 0.1.1"
+                        text: "TOPOLAB  ·  VERSION 0.3.0"
                         color: "#80685C"
                         font.pixelSize: 10
                         font.letterSpacing: 0.8

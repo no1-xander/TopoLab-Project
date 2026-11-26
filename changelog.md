@@ -2,12 +2,33 @@
 
 This file records the project releases delivered so far. Append a new section whenever a new version is delivered.
 
+## v0.3.0 — Interactive finite Set Toolkit
+
+**Status:** Implementation committed; local test execution and Windows QML runtime verification remain to be performed.
+
+### Added
+- A SetController that parses the workspace's finite-set notation and calls the existing mathematical core.
+- Interactive calculations for union, intersection, difference, complement relative to a universe, power sets, Cartesian products, subset, equality, and disjointness.
+- Input validation for duplicate or malformed labels and for complements whose set is not contained in the universe.
+- Explicit size limits for power-set and Cartesian-product rendering.
+- A dedicated controller test module.
+
+### Changed
+- Connected the Set Toolkit QML page to the Python controller.
+- Registered the controller in the Qt application.
+- Updated the project version to 0.3.0 in application metadata and documentation.
+
+### Scope and verification
+- The interface works with finite sets of simple labels; intervals, infinite sets, and symbolic expressions are outside this workspace's current input grammar.
+- The finite-map operations remain available in the Python core but are not yet exposed in the Set Toolkit page.
+- Tests have been added but have not been executed in this environment. Run python -m unittest discover -s tests -v and launch the app on Windows to verify the Qt/QML runtime.
+
 ## v0.2.0 — Finite set-theory core
 
 **Status:** Mathematical core committed; QML integration remains in progress.
 
 ### Added
-- A reusable finite-set engine in `topolab/core/sets.py`.
+- A reusable finite-set engine in topolab/core/sets.py.
 - Subset and equality checks, power sets, union, intersection, difference, complements relative to an explicit universe, disjointness, indexed-family unions and intersections, Cartesian products, and finite cardinality.
 - Finite-map image and preimage operations, injective/surjective/bijective checks, composition, and inverse functions for bijections.
 - A dedicated test module covering the implemented operations and several image/preimage identities from Chapter 1.
@@ -24,7 +45,7 @@ This file records the project releases delivered so far. Append a new section wh
 **Status:** Delivered as an update archive / patch.
 
 ### Added
-- `MathFormula.qml`, a reusable QML component for displayed mathematical expressions.
+- MathFormula.qml, a reusable QML component for displayed mathematical expressions.
 - A Python math-rendering service using Matplotlib MathText and the STIX math font set.
 - A clearer typography hierarchy using Segoe UI for interface text and Georgia for major headings.
 
@@ -35,7 +56,7 @@ This file records the project releases delivered so far. Append a new section wh
 
 ### Notes
 - MathText supports a TeX-like subset; it is not a complete LaTeX installation.
-- The v0.1.1 archive is an update patch intended to be extracted over the v0.1.0 starter project. Preserve `.venv` when applying updates.
+- The v0.1.1 archive is an update patch intended to be extracted over the v0.1.0 starter project. Preserve .venv when applying updates.
 
 ## v0.1.0 — Initial interface foundation
 
@@ -57,8 +78,8 @@ This file records the project releases delivered so far. Append a new section wh
 
 ## Versioning convention for future deliveries
 
-- **PATCH** (for example, 0.2.0 → 0.2.1): fixes or small improvements that do not add a substantial capability.
-- **MINOR** (for example, 0.2.0 → 0.3.0): a new mathematical module or substantial integrated capability.
-- **MAJOR** (0.x → 1.0.0): a stable, integrated release suitable for the final university demonstration.
+- PATCH (for example, 0.2.0 → 0.2.1): fixes or small improvements that do not add a substantial capability.
+- MINOR (for example, 0.2.0 → 0.3.0): a new mathematical module or substantial integrated capability.
+- MAJOR (0.x → 1.0.0): a stable, integrated release suitable for the final university demonstration.
 
-For each future delivery, update the version in `pyproject.toml`, `topolab/app.py`, and `README.md`, then append to this changelog. Clearly label an archive as either a complete project or a patch/update.
+For each future delivery, update the version in pyproject.toml, topolab/app.py, and README.md, then append to this changelog. Clearly label an archive as either a complete project or a patch/update.
